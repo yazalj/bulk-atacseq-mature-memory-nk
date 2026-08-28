@@ -1,0 +1,45 @@
+project:
+  assay: bulk_ATAC_seq
+  organism: REVIEW_ME
+  genome_build: REVIEW_ME
+  sequencing_layout: paired_end
+
+compute:
+  maximum_total_threads: 2
+  concurrent_intensive_processes: 1
+
+preprocessing:
+  adapter_read1: REVIEW_FROM_LIBRARY_PREPARATION
+  adapter_read2: REVIEW_FROM_LIBRARY_PREPARATION
+  minimum_mapping_quality: REVIEW_ME
+  require_proper_pair: true
+  remove_duplicates: REVIEW_ME
+  blacklist_file: REVIEW_FOR_ORGANISM_AND_BUILD
+  blacklist_removal: pair_preserving
+
+peak_calling:
+  caller: MACS3
+  input_format: BAMPE
+  genome_size: REVIEW_ME
+  qvalue: REVIEW_ME
+  broad_peaks: false
+
+counting:
+  count_unit: paired_fragments
+  strandedness: unstranded
+
+differential_accessibility:
+  minimum_count: REVIEW_ME
+  minimum_samples: REVIEW_FROM_REPLICATE_STRUCTURE
+  design: REVIEW_FROM_METADATA
+  reference_level: REVIEW_ME
+  contrast_numerator: REVIEW_ME
+  contrast_denominator: REVIEW_ME
+  adjusted_pvalue_threshold: 0.05
+  absolute_log2_fold_change_threshold: 1
+  lfc_shrinkage: apeglm
+
+downstream:
+  annotation_release: REVIEW_ME
+  background_definition: ALL_TESTED_REGIONS_OR_DERIVED_GENES
+  exploratory_nominal_analysis_allowed: false

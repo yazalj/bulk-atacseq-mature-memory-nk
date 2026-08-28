@@ -15,6 +15,20 @@ motif results, and IGV views are retained only as exploratory hypothesis-
 generation material. They are not FDR-significant discoveries and do not
 establish transcription-factor activity, regulatory targeting, or mechanism.
 
+## Start here
+
+- **Reproduce or inspect this internship case study:** read the
+  [reproducibility notes](docs/REPRODUCIBILITY.md) and the stage-specific
+  documentation under [`workflow/`](workflow/).
+- **Apply the same general approach to a new experiment:** follow the
+  [step-by-step bulk ATAC-seq tutorial](docs/tutorial/README.md), beginning with
+  the [quick-start checklist](docs/tutorial/QUICKSTART.md).
+
+The tutorial covers conventional **bulk, paired-end ATAC-seq**. It is not a
+single-cell ATAC-seq workflow, and its example commands must be adapted to the
+organism, reference build, library design, sample structure, and computing
+environment of each study.
+
 ## Study design
 
 | Item | Value |
@@ -93,7 +107,7 @@ validated regulatory links.
 config/       public sample registry and analysis parameters
 workflow/     public-release workflow scripts grouped by analysis stage
 results/      small summary tables and selected report-ready figures
-docs/         methods, data availability, limitations, and reproducibility
+docs/         project documentation and reusable step-by-step tutorial
 environment/  recorded software and package versions
 report/       publication-status note; the submitted report is not included
 ```

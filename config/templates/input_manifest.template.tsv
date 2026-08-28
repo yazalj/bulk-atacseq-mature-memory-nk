@@ -1,0 +1,6 @@
+role	sample_id	path	sha256	source	note
+raw_read_1	sample_01	/path/to/sample_01_R1.fastq.gz	RECORD_SHA256	sequencing_archive_or_facility	Do not commit private paths if the repository is public
+raw_read_2	sample_01	/path/to/sample_01_R2.fastq.gz	RECORD_SHA256	sequencing_archive_or_facility	Paired mate of raw_read_1
+reference_fasta	not_applicable	/path/to/reference.fa	RECORD_SHA256	authoritative_reference_provider	Record release and genome build
+annotation_gtf	not_applicable	/path/to/annotation.gtf	RECORD_SHA256	authoritative_annotation_provider	Must match the reference build
+blacklist_bed	not_applicable	/path/to/blacklist.bed	RECORD_SHA256	authoritative_blacklist_provider	Use only when suitable for the organism and build
