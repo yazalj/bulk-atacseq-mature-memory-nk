@@ -1,0 +1,2 @@
+minimum_count	minimum_samples	total_samples	before_peaks	after_peaks	removed_peaks	retention_percent	rule
+10	5	10	112759	59186	53573	52.4889365815589	count >= 10 in at least 5 of 10 samples

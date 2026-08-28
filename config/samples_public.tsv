@@ -1,0 +1,11 @@
+order	sample_id	donor_id	cell_type	treatment	sequencing_layout	donor_pairing
+1	SRR7650764	D1001	Mature_NK	untreated	paired-end	complete_pair
+2	SRR7650766	D1001	Memory_NK	untreated	paired-end	complete_pair
+3	SRR7650808	D1002	Memory_NK	untreated	paired-end	memory_only
+4	SRR7650846	D1003	Mature_NK	untreated	paired-end	complete_pair
+5	SRR7650848	D1003	Memory_NK	untreated	paired-end	complete_pair
+6	SRR7650883	D1004	Mature_NK	untreated	paired-end	complete_pair
+7	SRR7650885	D1004	Memory_NK	untreated	paired-end	complete_pair
+8	SRR7650911	D1008	Mature_NK	untreated	paired-end	complete_pair
+9	SRR7650913	D1008	Memory_NK	untreated	paired-end	complete_pair
+10	SRR7650922	D1010	Memory_NK	untreated	paired-end	memory_only

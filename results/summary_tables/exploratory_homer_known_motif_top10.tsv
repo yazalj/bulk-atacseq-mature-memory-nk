@@ -1,0 +1,11 @@
+rank_by_qvalue	motif_name	motif_short_label	p_value	q_value_benjamini	target_percent	background_percent	homer_reported_target_denominator	homer_reported_effective_background_denominator	q_below_0_05	interpretation_status
+1	GLI3(Zf)/Limb-GLI3-ChIP-Chip(GSE11077)/Homer	GLI3(Zf)	1e-04	0.0141	3.46	1.84	1561	55826	TRUE	Exploratory motif-library enrichment in nominal candidate peaks; not evidence of TF activity or causality
+2	REST-NRSF(Zf)/Jurkat-NRSF-ChIP-Seq/Homer	REST-NRSF(Zf)	0.001	0.0591	0.77	0.2	1561	55826	FALSE	Exploratory motif-library enrichment in nominal candidate peaks; not evidence of TF activity or causality
+3	At5g08330(TCP)/col-At5g08330-DAP-Seq(GSE60143)/Homer	At5g08330(TCP)	0.001	0.0667	12.16	9.41	1561	55826	FALSE	Exploratory motif-library enrichment in nominal candidate peaks; not evidence of TF activity or causality
+4	bcd(Homeobox)/Embryo-Bcd-ChIP-Seq(GSE86966)/Homer	bcd(Homeobox)	0.001	0.0667	11.2	8.59	1561	55826	FALSE	Exploratory motif-library enrichment in nominal candidate peaks; not evidence of TF activity or causality
+5	At1g72010(TCP)/colamp-At1g72010-DAP-Seq(GSE60143)/Homer	At1g72010(TCP)	0.001	0.0883	10.44	8.02	1561	55826	FALSE	Exploratory motif-library enrichment in nominal candidate peaks; not evidence of TF activity or causality
+6	hINR(CPE)	hINR(CPE)	0.001	0.103	16.39	13.48	1561	55826	FALSE	Exploratory motif-library enrichment in nominal candidate peaks; not evidence of TF activity or causality
+7	PAX5(Paired,Homeobox)/GM12878-PAX5-ChIP-Seq(GSE32465)/Homer	PAX5(Paired,Homeobox)	0.001	0.1228	6.15	4.4	1561	55826	FALSE	Exploratory motif-library enrichment in nominal candidate peaks; not evidence of TF activity or causality
+8	Tcf21(bHLH)/ArterySmoothMuscle-Tcf21-ChIP-Seq(GSE61369)/Homer	Tcf21(bHLH)	0.01	0.1617	16.77	14.02	1561	55826	FALSE	Exploratory motif-library enrichment in nominal candidate peaks; not evidence of TF activity or causality
+9	Sox9(HMG)/Limb-SOX9-ChIP-Seq(GSE73225)/Homer	Sox9(HMG)	0.01	0.2468	10.05	8	1561	55826	FALSE	Exploratory motif-library enrichment in nominal candidate peaks; not evidence of TF activity or causality
+10	At1g69690(TCP)/colamp-At1g69690-DAP-Seq(GSE60143)/Homer	At1g69690(TCP)	0.01	0.2539	5.44	3.96	1561	55826	FALSE	Exploratory motif-library enrichment in nominal candidate peaks; not evidence of TF activity or causality

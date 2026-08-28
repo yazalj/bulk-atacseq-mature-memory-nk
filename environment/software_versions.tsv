@@ -1,0 +1,21 @@
+component	version	role
+FastQC	0.12.1	Week 1 read QC
+Cutadapt	5.2	Week 1 adapter trimming
+Bowtie2	2.5.5	Week 1 alignment
+SAMtools	1.24	BAM processing and validation
+Picard	3.4.0	Duplicate handling and insert-size QC
+bedtools	2.31.1	Blacklist and consensus interval operations
+MACS3	3.0.2	Week 1 teaching peak call
+MultiQC	1.25	Week 1 focused QC report
+featureCounts	2.1.1	Paired-fragment counting
+R	4.5.2	Differential analysis runtime
+DESeq2	1.50.2	Donor-aware differential accessibility
+apeglm	1.32.0	Log2 fold-change shrinkage
+vsn	3.78.1	Variance-stabilizing diagnostics dependency
+ggplot2	4.0.3	Figures
+pheatmap	1.0.13	Sample-distance heatmap
+GENCODE	Release 50	GRCh38 primary-assembly annotation
+g:Profiler	e114_eg62_p19_27110d83	Exploratory enrichment database build
+HOMER	5.1	Exploratory motif enrichment
+IGV	2.19.8	Exploratory locus-level visual QC
+Java	21.0.12	IGV runtime

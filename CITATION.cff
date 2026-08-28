@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this educational workflow, please cite this repository and the underlying Calderon et al. dataset."
+title: "Bulk ATAC-seq analysis of Mature and Memory human NK cells"
+type: software
+authors:
+  - family-names: Aljerro
+    given-names: Yazan
+version: 1.0.0
+date-released: 2026-08-28
+license: MIT
+keywords:
+  - ATAC-seq
+  - chromatin accessibility
+  - natural killer cells
+  - DESeq2
+  - bioinformatics
+references:
+  - type: article
+    title: "Landscape of stimulation-responsive chromatin across diverse human immune cells"
+    authors:
+      - family-names: Calderon
+        given-names: Diego
+    journal: Nature Genetics
+    year: 2019
+    volume: 51
+    pages: 1494-1505
+    doi: 10.1038/s41588-019-0505-9

@@ -1,0 +1,11 @@
+order	sample_id	donor	cell_type	pairing_status	broadpeak_file	bam_file
+1	SRR7650764	D1001	Mature_NK	complete_pair	SRR7650764_REP1.mLb.clN_peaks.broadPeak	SRR7650764_REP1.mLb.clN.sorted.bam
+2	SRR7650766	D1001	Memory_NK	complete_pair	SRR7650766_REP1.mLb.clN_peaks.broadPeak	SRR7650766_REP1.mLb.clN.sorted.bam
+3	SRR7650808	D1002	Memory_NK	memory_only	SRR7650808_REP1.mLb.clN_peaks.broadPeak	SRR7650808_REP1.mLb.clN.sorted.bam
+4	SRR7650846	D1003	Mature_NK	complete_pair	SRR7650846_REP1.mLb.clN_peaks.broadPeak	SRR7650846_REP1.mLb.clN.sorted.bam
+5	SRR7650848	D1003	Memory_NK	complete_pair	SRR7650848_REP1.mLb.clN_peaks.broadPeak	SRR7650848_REP1.mLb.clN.sorted.bam
+6	SRR7650883	D1004	Mature_NK	complete_pair	SRR7650883_REP1.mLb.clN_peaks.broadPeak	SRR7650883_REP1.mLb.clN.sorted.bam
+7	SRR7650885	D1004	Memory_NK	complete_pair	SRR7650885_REP1.mLb.clN_peaks.broadPeak	SRR7650885_REP1.mLb.clN.sorted.bam
+8	SRR7650911	D1008	Mature_NK	complete_pair	SRR7650911_REP1.mLb.clN_peaks.broadPeak	SRR7650911_REP1.mLb.clN.sorted.bam
+9	SRR7650913	D1008	Memory_NK	complete_pair	SRR7650913_REP1.mLb.clN_peaks.broadPeak	SRR7650913_REP1.mLb.clN.sorted.bam
+10	SRR7650922	D1010	Memory_NK	memory_only	SRR7650922_REP1.mLb.clN_peaks.broadPeak	SRR7650922_REP1.mLb.clN.sorted.bam

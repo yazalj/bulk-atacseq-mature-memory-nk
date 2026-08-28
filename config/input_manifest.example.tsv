@@ -1,0 +1,12 @@
+role	accession	public_release_path_placeholder	note
+week1_training	SRR7650763	/path/to/SRR7650763_chr22_inputs	Immature NK chromosome-22 teaching subset; excluded from the final comparison
+week2_comparison	SRR7650764	/path/to/SRR7650764_inputs	Mature NK
+week2_comparison	SRR7650766	/path/to/SRR7650766_inputs	Memory NK
+week2_comparison	SRR7650808	/path/to/SRR7650808_inputs	Memory NK
+week2_comparison	SRR7650846	/path/to/SRR7650846_inputs	Mature NK
+week2_comparison	SRR7650848	/path/to/SRR7650848_inputs	Memory NK
+week2_comparison	SRR7650883	/path/to/SRR7650883_inputs	Mature NK
+week2_comparison	SRR7650885	/path/to/SRR7650885_inputs	Memory NK
+week2_comparison	SRR7650911	/path/to/SRR7650911_inputs	Mature NK
+week2_comparison	SRR7650913	/path/to/SRR7650913_inputs	Memory NK
+week2_comparison	SRR7650922	/path/to/SRR7650922_inputs	Memory NK

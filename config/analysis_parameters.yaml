@@ -1,0 +1,57 @@
+project:
+  assay: bulk_ATAC_seq
+  comparison: Memory_NK_relative_to_Mature_NK
+  genome_build: GRCh38
+  release_snapshot: 2026-08-28
+
+compute:
+  maximum_total_threads: 2
+  concurrent_intensive_processes: 1
+
+week1_training:
+  sample_id: SRR7650763
+  cell_type: Immature_NK
+  treatment: untreated
+  scope: chromosome_22_teaching_subset
+  included_in_final_comparison: false
+  alignment_minimum_mapq: 30
+  blacklist_removal: pair_preserving
+  peak_caller: MACS3_3.0.2
+  peak_format: BAMPE
+  peak_qvalue: 0.05
+
+week2_consensus_and_counts:
+  mature_samples: 4
+  memory_samples: 6
+  condition_union_merge_distance: 0
+  consensus_regions: 112759
+  count_unit: paired_fragments
+  featurecounts_version: 2.1.1
+  featurecounts_options: "-F SAF -p --countReadPairs -B -C -s 0 -T 2"
+
+primary_differential_analysis:
+  minimum_count: 10
+  minimum_samples: 5
+  total_samples: 10
+  tested_regions: 59186
+  design: "~ donor + cell_type"
+  reference_level: Mature_NK
+  contrast: Memory_NK_relative_to_Mature_NK
+  adjusted_pvalue_threshold: 0.05
+  absolute_log2_fold_change_threshold: 1
+  shrinkage: apeglm
+  significant_dars_ordinary_lfc: 0
+  significant_dars_apeglm_lfc: 0
+
+exploratory_followup:
+  nominal_raw_pvalue_threshold: 0.05
+  strict_nominal_set:
+    definition: "raw p < 0.05 and absolute apeglm LFC >= 1 under the primary 10-in-5 filter"
+    regions: 21
+    memory_direction: 11
+    mature_direction: 10
+  annotation: GENCODE_release_50_GRCh38_primary_assembly
+  homer_target_regions: 1562
+  homer_background_regions: 59186
+  homer_window_bp: 200
+  interpretation: exploratory_only_not_fdr_significant

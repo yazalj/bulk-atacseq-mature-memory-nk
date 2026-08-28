@@ -1,0 +1,4 @@
+scenario_id	minimum_samples	filter_rule	tested_peaks	minimum_raw_pvalue	minimum_adjusted_pvalue	raw_p_lt_0_05	raw_p_lt_0_05_and_abs_ordinary_lfc_ge_1	raw_p_lt_0_05_and_abs_apeglm_lfc_ge_1	fdr_ordinary_dars	fdr_apeglm_dars	maximum_absolute_ordinary_lfc	maximum_absolute_apeglm_lfc	max_pvalue_difference_between_tables	max_padj_difference_between_tables	max_ordinary_lfc_difference_between_tables
+minimum_samples_5	5	count >= 10 in at least 5 of 10 samples	59186	0.0000014945281981651	0.0884551459365997	3426	1562	21	0	0	3.98512168786333	1.77649539268427	0	0	0
+minimum_samples_3	3	count >= 10 in at least 3 of 10 samples	73503	0.00000189704320570637	0.127116109325122	4079	1972	21	0	0	3.95586395953461	1.60791072410465	0	0	0
+minimum_samples_0	0	no explicit low-count prefilter; all protected consensus peaks supplied to DESeq2	112759	0.00000525491641626988	0.300121840667027	4366	2289	26	0	0	4.05727260649027	1.65264052791628	0	0	0
