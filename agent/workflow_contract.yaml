@@ -1,0 +1,222 @@
+contract_version: 1
+name: bulk_paired_end_atacseq_human_supervised
+scope:
+  included: conventional_bulk_paired_end_ATAC_seq
+  excluded:
+    - single_cell_ATAC_seq
+    - multiome
+    - clinical_grade_processing
+
+default_mode: new_study_dry_run
+allowed_modes:
+  - case_study_audit
+  - new_study_dry_run
+  - new_study_execution
+
+default_compute:
+  maximum_total_threads: 2
+  concurrent_intensive_stages: 1
+
+global_invariants:
+  - source_inputs_are_immutable
+  - outputs_never_overwrite_inputs_or_prior_attempts
+  - sample_identity_is_confirmed_from_metadata_not_filenames
+  - paired_end_relationships_are_preserved
+  - reference_resources_share_one_declared_genome_build
+  - count_matrix_columns_exactly_match_metadata_order
+  - primary_claims_use_multiple_testing_control
+  - every_completed_stage_has_validation_evidence
+  - later_stages_require_separate_authorization
+
+human_decisions:
+  - id: study_scope
+    covers: organism_assay_biological_question_samples_replication
+  - id: reference_resources
+    covers: genome_build_fasta_indexes_annotation_blacklist_contigs
+  - id: read_processing
+    covers: adapters_quality_trimming_read_retention
+  - id: alignment_filtering
+    covers: aligner_settings_mapq_flags_duplicates_unwanted_contigs_blacklist
+  - id: peak_calling
+    covers: caller_fragment_mode_genome_size_peak_type_thresholds_controls
+  - id: consensus_strategy
+    covers: replicate_support_union_rules_merge_distance_count_unit
+  - id: statistical_design
+    covers: low_count_filter_covariates_reference_level_contrast_thresholds
+  - id: downstream_scope
+    covers: target_definition_annotation_background_enrichment_nominal_exploration
+
+stages:
+  - id: define_study
+    depends_on: []
+    tutorial: docs/tutorial/00_overview.md
+    authorization: human_decision_required
+    required_decisions: [study_scope]
+    inputs: [study_question, sample_inventory]
+    outputs: [samples_tsv, parameters_json, status_json]
+    checks:
+      - sample_ids_unique
+      - biological_replication_declared
+      - comparison_written_in_plain_language
+    stop_if:
+      - sample_identity_or_mates_uncertain
+      - assay_outside_contract_scope
+
+  - id: validate_inputs
+    depends_on: [define_study]
+    tutorial: docs/tutorial/01_requirements_and_project_setup.md
+    authorization: configuration_checks_only
+    required_decisions: [reference_resources]
+    inputs: [samples_tsv, parameters_json, input_manifest]
+    outputs: [configuration_validation_report]
+    suggested_command: python scripts/validate_agent_configuration.py --samples SAMPLES --parameters PARAMETERS --status STATUS
+    checks:
+      - configuration_validator_passes
+      - input_checksums_recorded
+      - reference_builds_and_chromosome_names_match
+    stop_if:
+      - validator_error
+      - missing_or_mutable_source_input
+      - reference_identity_uncertain
+
+  - id: raw_read_qc
+    depends_on: [validate_inputs]
+    tutorial: docs/tutorial/03_raw_read_quality_control.md
+    authorization: stage_approval_required
+    required_decisions: [read_processing]
+    inputs: [paired_raw_fastq]
+    outputs: [per_mate_fastqc, focused_raw_multiqc, qc_decision_record]
+    checks:
+      - expected_mates_reported
+      - read_counts_and_lengths_reviewed
+      - adapter_and_quality_evidence_recorded
+    stop_if: [missing_mate, truncated_fastq, unresolved_sample_outlier]
+
+  - id: trim_reads
+    optional: true
+    depends_on: [raw_read_qc]
+    tutorial: docs/tutorial/04_adapter_trimming.md
+    authorization: stage_approval_required
+    required_decisions: [read_processing]
+    inputs: [paired_raw_fastq, confirmed_adapter_sequences]
+    outputs: [paired_trimmed_fastq, trimming_log, post_trim_fastqc]
+    checks:
+      - output_mate_record_counts_equal
+      - trimming_summary_reviewed
+      - post_trim_qc_reviewed
+    stop_if: [adapter_sequence_uncertain, mate_count_mismatch, empty_output]
+
+  - id: align_reads
+    depends_on: [raw_read_qc]
+    optional_dependency: trim_reads
+    tutorial: docs/tutorial/05_alignment.md
+    authorization: stage_approval_required
+    required_decisions: [reference_resources, alignment_filtering]
+    inputs: [validated_paired_reads, verified_aligner_index]
+    outputs: [alignment_file, alignment_log]
+    checks:
+      - command_exit_zero
+      - reference_header_matches_declared_build
+      - input_pairs_reconcile_with_alignment_summary
+      - cross_sample_mapping_review_complete
+    stop_if: [reference_mismatch, unexpected_mapping_failure]
+
+  - id: process_bam
+    depends_on: [align_reads]
+    tutorial: docs/tutorial/06_bam_filtering_and_qc.md
+    authorization: stage_approval_required
+    required_decisions: [alignment_filtering]
+    inputs: [alignment_file, blacklist_if_used]
+    outputs: [final_coordinate_sorted_bam, bai, alignment_qc_metrics]
+    checks:
+      - bam_quickcheck_passes
+      - coordinate_sorting_confirmed
+      - sample_and_read_group_identity_confirmed
+      - pair_preservation_validated
+      - bam_and_index_agree
+      - atac_specific_qc_reviewed
+    stop_if: [bam_validation_failure, orphaned_pairs, unresolved_qc_outlier]
+
+  - id: call_peaks
+    depends_on: [process_bam]
+    tutorial: docs/tutorial/07_peak_calling.md
+    authorization: stage_approval_required
+    required_decisions: [peak_calling]
+    inputs: [final_bam_per_sample]
+    outputs: [per_sample_peak_sets, peak_calling_logs, peak_qc_summary]
+    checks:
+      - peak_files_structurally_valid
+      - coordinates_match_reference
+      - peak_counts_widths_and_frip_reviewed
+    stop_if: [peak_caller_failure, invalid_coordinates, unresolved_sample_outlier]
+
+  - id: build_consensus
+    depends_on: [call_peaks]
+    tutorial: docs/tutorial/08_consensus_peaks_and_counting.md
+    authorization: stage_approval_required
+    required_decisions: [consensus_strategy]
+    inputs: [per_sample_peak_sets]
+    outputs: [consensus_bed, counting_annotation]
+    checks:
+      - intervals_sorted_valid_and_nonoverlapping
+      - coordinate_conversion_preserves_lengths
+      - consensus_rule_and_feature_count_recorded
+    stop_if: [coordinate_conversion_failure, undeclared_consensus_rule]
+
+  - id: count_fragments
+    depends_on: [build_consensus, process_bam]
+    tutorial: docs/tutorial/08_consensus_peaks_and_counting.md
+    authorization: stage_approval_required
+    required_decisions: [consensus_strategy]
+    inputs: [consensus_annotation, ordered_final_bams]
+    outputs: [integer_count_matrix, peak_annotation, assignment_summary]
+    checks:
+      - count_unit_is_paired_fragments
+      - counts_are_nonnegative_integers
+      - columns_match_metadata_order
+      - column_sums_match_assignment_summary
+    stop_if: [sample_order_mismatch, count_structure_failure]
+
+  - id: differential_accessibility
+    depends_on: [count_fragments]
+    tutorial: docs/tutorial/09_differential_accessibility.md
+    authorization: stage_approval_required
+    required_decisions: [statistical_design]
+    inputs: [integer_count_matrix, ordered_metadata, peak_annotation]
+    outputs: [effect_tables, adjusted_pvalues, diagnostics, primary_classification]
+    checks:
+      - model_matrix_full_rank
+      - reference_and_contrast_direction_verified
+      - size_factors_finite_and_positive
+      - tested_region_count_recorded
+      - multiple_testing_control_applied
+    stop_if: [rank_deficient_design, contrast_mismatch, failed_model_validation]
+
+  - id: downstream_analysis
+    optional: true
+    depends_on: [differential_accessibility]
+    tutorial: docs/tutorial/10_annotation_and_enrichment.md
+    authorization: stage_approval_required
+    required_decisions: [downstream_scope]
+    inputs: [declared_target_set, tested_background, compatible_annotation]
+    outputs: [annotation_and_or_enrichment_summaries]
+    checks:
+      - target_and_background_definitions_recorded
+      - genome_and_annotation_compatible
+      - exploratory_outputs_labelled_everywhere
+    stop_if: [background_undefined, primary_and_nominal_results_conflated]
+
+  - id: report_analysis
+    depends_on: [differential_accessibility]
+    optional_dependency: downstream_analysis
+    tutorial: docs/tutorial/11_interpretation_and_reporting.md
+    authorization: reporting_approval_required
+    required_decisions: []
+    inputs: [validated_stage_evidence, limitations, provenance]
+    outputs: [methods, results_summary, limitations, reproducibility_record]
+    checks:
+      - primary_result_reported_first
+      - observed_facts_separated_from_interpretation
+      - zero_fdr_result_not_overstated
+      - data_availability_and_versions_recorded
+    stop_if: [missing_validation_evidence, unsupported_biological_claim]

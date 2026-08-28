@@ -71,6 +71,14 @@ flowchart TD
 For a compact run plan, use [QUICKSTART.md](QUICKSTART.md). Blank metadata and
 parameter files are provided under [`config/templates/`](../../config/templates/).
 
+## Using the tutorial with an AI agent
+
+The [`agent/`](../../agent/) directory converts the chapter sequence into a
+machine-readable, human-supervised contract. It includes stage dependencies,
+approval gates, status vocabulary, schemas, configuration validation, and an
+example starting request. Agents must still stop for study-specific scientific
+decisions and may execute only an explicitly approved stage.
+
 ## How this relates to the internship
 
 The repository's main analysis is the worked example. Exact internship choices

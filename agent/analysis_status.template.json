@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "analysis_id": "REPLACE_ME",
+  "mode": "new_study_dry_run",
+  "scope": "conventional_bulk_paired_end_ATAC_seq",
+  "current_stage": "define_study",
+  "created_at": null,
+  "updated_at": null,
+  "configuration": {
+    "samples": "config/local/REPLACE_ME.samples.tsv",
+    "parameters": "config/local/REPLACE_ME.parameters.json",
+    "input_manifest": "config/local/REPLACE_ME.input_manifest.tsv"
+  },
+  "human_decisions": {
+    "study_scope": {"status": "pending", "approved_by": null, "approved_at": null, "decision": null},
+    "reference_resources": {"status": "pending", "approved_by": null, "approved_at": null, "decision": null},
+    "read_processing": {"status": "pending", "approved_by": null, "approved_at": null, "decision": null},
+    "alignment_filtering": {"status": "pending", "approved_by": null, "approved_at": null, "decision": null},
+    "peak_calling": {"status": "pending", "approved_by": null, "approved_at": null, "decision": null},
+    "consensus_strategy": {"status": "pending", "approved_by": null, "approved_at": null, "decision": null},
+    "statistical_design": {"status": "pending", "approved_by": null, "approved_at": null, "decision": null},
+    "downstream_scope": {"status": "pending", "approved_by": null, "approved_at": null, "decision": null}
+  },
+  "stages": [
+    {"id": "define_study", "status": "not_started", "attempt": null, "inputs": [], "outputs": [], "validation": [], "notes": []},
+    {"id": "validate_inputs", "status": "not_started", "attempt": null, "inputs": [], "outputs": [], "validation": [], "notes": []},
+    {"id": "raw_read_qc", "status": "not_started", "attempt": null, "inputs": [], "outputs": [], "validation": [], "notes": []},
+    {"id": "trim_reads", "status": "not_started", "attempt": null, "inputs": [], "outputs": [], "validation": [], "notes": []},
+    {"id": "align_reads", "status": "not_started", "attempt": null, "inputs": [], "outputs": [], "validation": [], "notes": []},
+    {"id": "process_bam", "status": "not_started", "attempt": null, "inputs": [], "outputs": [], "validation": [], "notes": []},
+    {"id": "call_peaks", "status": "not_started", "attempt": null, "inputs": [], "outputs": [], "validation": [], "notes": []},
+    {"id": "build_consensus", "status": "not_started", "attempt": null, "inputs": [], "outputs": [], "validation": [], "notes": []},
+    {"id": "count_fragments", "status": "not_started", "attempt": null, "inputs": [], "outputs": [], "validation": [], "notes": []},
+    {"id": "differential_accessibility", "status": "not_started", "attempt": null, "inputs": [], "outputs": [], "validation": [], "notes": []},
+    {"id": "downstream_analysis", "status": "not_started", "attempt": null, "inputs": [], "outputs": [], "validation": [], "notes": []},
+    {"id": "report_analysis", "status": "not_started", "attempt": null, "inputs": [], "outputs": [], "validation": [], "notes": []}
+  ]
+}

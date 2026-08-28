@@ -1,0 +1,5 @@
+order	sample_id	donor	condition	batch	treatment	sequencing_layout	read1_fastq	read2_fastq
+1	example_A1	donor_01	condition_A	batch_01	untreated	paired-end	reads/example_A1_R1.fastq.gz	reads/example_A1_R2.fastq.gz
+2	example_B1	donor_01	condition_B	batch_01	untreated	paired-end	reads/example_B1_R1.fastq.gz	reads/example_B1_R2.fastq.gz
+3	example_A2	donor_02	condition_A	batch_01	untreated	paired-end	reads/example_A2_R1.fastq.gz	reads/example_A2_R2.fastq.gz
+4	example_B2	donor_02	condition_B	batch_01	untreated	paired-end	reads/example_B2_R1.fastq.gz	reads/example_B2_R2.fastq.gz

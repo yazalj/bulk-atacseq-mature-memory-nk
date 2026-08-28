@@ -23,6 +23,11 @@ establish transcription-factor activity, regulatory targeting, or mechanism.
 - **Apply the same general approach to a new experiment:** follow the
   [step-by-step bulk ATAC-seq tutorial](docs/tutorial/README.md), beginning with
   the [quick-start checklist](docs/tutorial/QUICKSTART.md).
+- **Work with an AI agent:** begin with the
+  [human-supervised agent interface](agent/README.md). It provides a staged
+  workflow contract, machine-readable configuration and status files,
+  deterministic validation, and a repo-scoped Codex skill named
+  `$bulk-atacseq-agent`.
 
 The tutorial covers conventional **bulk, paired-end ATAC-seq**. It is not a
 single-cell ATAC-seq workflow, and its example commands must be adapted to the
@@ -108,6 +113,7 @@ config/       public sample registry and analysis parameters
 workflow/     public-release workflow scripts grouped by analysis stage
 results/      small summary tables and selected report-ready figures
 docs/         project documentation and reusable step-by-step tutorial
+agent/        provider-neutral AI-agent contract, schemas, state, and examples
 environment/  recorded software and package versions
 report/       publication-status note; the submitted report is not included
 ```

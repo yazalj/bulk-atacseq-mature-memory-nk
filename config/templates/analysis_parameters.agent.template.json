@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "analysis_id": "REPLACE_ME",
+  "project": {
+    "assay": "bulk_ATAC_seq",
+    "organism": "REVIEW_ME",
+    "genome_build": "REVIEW_ME",
+    "sequencing_layout": "paired_end"
+  },
+  "compute": {
+    "maximum_total_threads": 2,
+    "concurrent_intensive_stages": 1,
+    "thread_limit_authorized_by": "repository_safe_default"
+  },
+  "references": {
+    "fasta": "REVIEW_ME",
+    "aligner_index_prefix": "REVIEW_ME",
+    "annotation_gtf": "REVIEW_ME",
+    "blacklist_bed": "REVIEW_ME_OR_NULL",
+    "chromosome_style": "REVIEW_ME"
+  },
+  "preprocessing": {
+    "perform_trimming": true,
+    "adapter_read1": "REVIEW_FROM_LIBRARY_PREPARATION",
+    "adapter_read2": "REVIEW_FROM_LIBRARY_PREPARATION",
+    "minimum_mapping_quality": 30,
+    "require_proper_pair": true,
+    "duplicate_policy": "REVIEW_ME",
+    "blacklist_removal": "pair_preserving",
+    "exclude_contigs": []
+  },
+  "peak_calling": {
+    "caller": "MACS3",
+    "input_format": "BAMPE",
+    "genome_size": "REVIEW_ME",
+    "peak_type": "narrow",
+    "qvalue": 0.05
+  },
+  "counting": {
+    "count_unit": "paired_fragments",
+    "strandedness": "unstranded",
+    "consensus_strategy": "REVIEW_ME"
+  },
+  "differential_accessibility": {
+    "minimum_count": 10,
+    "minimum_samples": "REVIEW_FROM_REPLICATE_STRUCTURE",
+    "design": "REVIEW_FROM_METADATA",
+    "reference_level": "REVIEW_ME",
+    "contrast_numerator": "REVIEW_ME",
+    "contrast_denominator": "REVIEW_ME",
+    "adjusted_pvalue_threshold": 0.05,
+    "absolute_log2_fold_change_threshold": 1.0,
+    "lfc_shrinkage": "apeglm"
+  },
+  "downstream": {
+    "annotation_release": "REVIEW_ME",
+    "background_definition": "all_tested_regions_or_derived_genes",
+    "exploratory_nominal_analysis_allowed": false
+  }
+}

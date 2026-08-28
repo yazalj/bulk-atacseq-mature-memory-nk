@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bulk ATAC-seq Agent"
+  short_description: "Safely guide a bulk ATAC-seq analysis"
+  default_prompt: "Use $bulk-atacseq-agent to prepare and validate a staged bulk ATAC-seq analysis plan for this dataset."

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/yazalj/bulk-atacseq-mature-memory-nk/main/agent/schemas/samples.schema.json",
+  "title": "Normalized bulk paired-end ATAC-seq sample registry rows",
+  "description": "Schema for row objects after TSV values such as order have been type-coerced.",
+  "type": "array",
+  "minItems": 2,
+  "items": {
+    "type": "object",
+    "additionalProperties": true,
+    "required": [
+      "order",
+      "sample_id",
+      "donor",
+      "condition",
+      "batch",
+      "treatment",
+      "sequencing_layout",
+      "read1_fastq",
+      "read2_fastq"
+    ],
+    "properties": {
+      "order": {"type": "integer", "minimum": 1},
+      "sample_id": {"type": "string", "minLength": 1},
+      "donor": {"type": "string", "minLength": 1},
+      "condition": {"type": "string", "minLength": 1},
+      "batch": {"type": "string", "minLength": 1},
+      "treatment": {"type": "string", "minLength": 1},
+      "sequencing_layout": {"const": "paired-end"},
+      "read1_fastq": {"type": "string", "minLength": 1},
+      "read2_fastq": {"type": "string", "minLength": 1}
+    }
+  }
+}

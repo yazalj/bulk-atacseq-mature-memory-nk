@@ -90,6 +90,9 @@ logs/
 .env
 .env.*
 !.env.example
+config/local/
+agent/local_status/
+agent/run_state/
 *.pem
 *.key
 *.p12

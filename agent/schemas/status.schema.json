@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/yazalj/bulk-atacseq-mature-memory-nk/main/agent/schemas/status.schema.json",
+  "title": "Bulk ATAC-seq agent analysis status",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "analysis_id", "mode", "scope", "current_stage", "configuration", "human_decisions", "stages"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "analysis_id": {"type": "string", "minLength": 1},
+    "mode": {"enum": ["case_study_audit", "new_study_dry_run", "new_study_execution"]},
+    "scope": {"const": "conventional_bulk_paired_end_ATAC_seq"},
+    "current_stage": {"type": "string", "minLength": 1},
+    "created_at": {"type": ["string", "null"]},
+    "updated_at": {"type": ["string", "null"]},
+    "configuration": {"type": "object"},
+    "human_decisions": {"type": "object"},
+    "stages": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "required": ["id", "status", "attempt", "inputs", "outputs", "validation", "notes"],
+        "properties": {
+          "id": {"type": "string"},
+          "status": {"enum": ["not_started", "awaiting_human", "approved", "running", "validation_failed", "complete", "blocked", "not_applicable"]},
+          "attempt": {"type": ["string", "null"]},
+          "inputs": {"type": "array"},
+          "outputs": {"type": "array"},
+          "validation": {"type": "array"},
+          "notes": {"type": "array"}
+        }
+      }
+    }
+  }
+}

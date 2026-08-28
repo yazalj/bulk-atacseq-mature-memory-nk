@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/yazalj/bulk-atacseq-mature-memory-nk/main/agent/schemas/parameters.schema.json",
+  "title": "Human-reviewed bulk paired-end ATAC-seq parameters",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "analysis_id",
+    "project",
+    "compute",
+    "references",
+    "preprocessing",
+    "peak_calling",
+    "counting",
+    "differential_accessibility",
+    "downstream"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "analysis_id": {"type": "string", "minLength": 1},
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["assay", "organism", "genome_build", "sequencing_layout"],
+      "properties": {
+        "assay": {"const": "bulk_ATAC_seq"},
+        "organism": {"type": "string", "minLength": 1},
+        "genome_build": {"type": "string", "minLength": 1},
+        "sequencing_layout": {"const": "paired_end"}
+      }
+    },
+    "compute": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maximum_total_threads", "concurrent_intensive_stages", "thread_limit_authorized_by"],
+      "properties": {
+        "maximum_total_threads": {"type": "integer", "minimum": 1},
+        "concurrent_intensive_stages": {"const": 1},
+        "thread_limit_authorized_by": {"type": "string", "minLength": 1}
+      }
+    },
+    "references": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fasta", "aligner_index_prefix", "annotation_gtf", "blacklist_bed", "chromosome_style"],
+      "properties": {
+        "fasta": {"type": "string", "minLength": 1},
+        "aligner_index_prefix": {"type": "string", "minLength": 1},
+        "annotation_gtf": {"type": "string", "minLength": 1},
+        "blacklist_bed": {"type": ["string", "null"]},
+        "chromosome_style": {"enum": ["chr_prefixed", "unprefixed", "other"]}
+      }
+    },
+    "preprocessing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["perform_trimming", "adapter_read1", "adapter_read2", "minimum_mapping_quality", "require_proper_pair", "duplicate_policy", "blacklist_removal", "exclude_contigs"],
+      "properties": {
+        "perform_trimming": {"type": "boolean"},
+        "adapter_read1": {"type": ["string", "null"]},
+        "adapter_read2": {"type": ["string", "null"]},
+        "minimum_mapping_quality": {"type": "integer", "minimum": 0, "maximum": 60},
+        "require_proper_pair": {"type": "boolean"},
+        "duplicate_policy": {"enum": ["mark", "remove", "retain"]},
+        "blacklist_removal": {"enum": ["pair_preserving", "not_used"]},
+        "exclude_contigs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }
+    },
+    "peak_calling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["caller", "input_format", "genome_size", "peak_type", "qvalue"],
+      "properties": {
+        "caller": {"const": "MACS3"},
+        "input_format": {"const": "BAMPE"},
+        "genome_size": {"type": ["string", "integer"]},
+        "peak_type": {"enum": ["narrow", "broad"]},
+        "qvalue": {"type": "number", "exclusiveMinimum": 0, "maximum": 1}
+      }
+    },
+    "counting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["count_unit", "strandedness", "consensus_strategy"],
+      "properties": {
+        "count_unit": {"const": "paired_fragments"},
+        "strandedness": {"const": "unstranded"},
+        "consensus_strategy": {"type": "string", "minLength": 1}
+      }
+    },
+    "differential_accessibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minimum_count", "minimum_samples", "design", "reference_level", "contrast_numerator", "contrast_denominator", "adjusted_pvalue_threshold", "absolute_log2_fold_change_threshold", "lfc_shrinkage"],
+      "properties": {
+        "minimum_count": {"type": "integer", "minimum": 0},
+        "minimum_samples": {"type": "integer", "minimum": 1},
+        "design": {"type": "string", "minLength": 2},
+        "reference_level": {"type": "string", "minLength": 1},
+        "contrast_numerator": {"type": "string", "minLength": 1},
+        "contrast_denominator": {"type": "string", "minLength": 1},
+        "adjusted_pvalue_threshold": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "absolute_log2_fold_change_threshold": {"type": "number", "minimum": 0},
+        "lfc_shrinkage": {"enum": ["apeglm", "ashr", "none"]}
+      }
+    },
+    "downstream": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["annotation_release", "background_definition", "exploratory_nominal_analysis_allowed"],
+      "properties": {
+        "annotation_release": {"type": "string", "minLength": 1},
+        "background_definition": {"type": "string", "minLength": 1},
+        "exploratory_nominal_analysis_allowed": {"type": "boolean"}
+      }
+    }
+  }
+}

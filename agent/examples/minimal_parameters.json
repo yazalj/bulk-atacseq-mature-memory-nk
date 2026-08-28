@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "analysis_id": "minimal_example",
+  "project": {
+    "assay": "bulk_ATAC_seq",
+    "organism": "Homo sapiens",
+    "genome_build": "GRCh38",
+    "sequencing_layout": "paired_end"
+  },
+  "compute": {
+    "maximum_total_threads": 2,
+    "concurrent_intensive_stages": 1,
+    "thread_limit_authorized_by": "repository_safe_default"
+  },
+  "references": {
+    "fasta": "reference/GRCh38.primary_assembly.genome.fa",
+    "aligner_index_prefix": "reference/bowtie2/GRCh38",
+    "annotation_gtf": "reference/gencode.annotation.gtf",
+    "blacklist_bed": "reference/GRCh38.blacklist.bed",
+    "chromosome_style": "chr_prefixed"
+  },
+  "preprocessing": {
+    "perform_trimming": true,
+    "adapter_read1": "CTGTCTCTTATACACATCT",
+    "adapter_read2": "CTGTCTCTTATACACATCT",
+    "minimum_mapping_quality": 30,
+    "require_proper_pair": true,
+    "duplicate_policy": "remove",
+    "blacklist_removal": "pair_preserving",
+    "exclude_contigs": ["chrM"]
+  },
+  "peak_calling": {
+    "caller": "MACS3",
+    "input_format": "BAMPE",
+    "genome_size": "hs",
+    "peak_type": "narrow",
+    "qvalue": 0.05
+  },
+  "counting": {
+    "count_unit": "paired_fragments",
+    "strandedness": "unstranded",
+    "consensus_strategy": "merge condition unions at distance 0"
+  },
+  "differential_accessibility": {
+    "minimum_count": 10,
+    "minimum_samples": 2,
+    "design": "~ donor + condition",
+    "reference_level": "condition_A",
+    "contrast_numerator": "condition_B",
+    "contrast_denominator": "condition_A",
+    "adjusted_pvalue_threshold": 0.05,
+    "absolute_log2_fold_change_threshold": 1.0,
+    "lfc_shrinkage": "apeglm"
+  },
+  "downstream": {
+    "annotation_release": "GENCODE release compatible with GRCh38",
+    "background_definition": "genes derived from all tested consensus regions",
+    "exploratory_nominal_analysis_allowed": false
+  }
+}
