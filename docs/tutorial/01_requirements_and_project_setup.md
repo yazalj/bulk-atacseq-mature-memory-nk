@@ -114,19 +114,34 @@ the versions that were actually resolved for each new study.
 
 ## Verify the installation
 
-Paste this block after activating the environment. It stops at the first
-missing command or R package:
+The easiest option is to run the repository's read-only installation checker
+from the repository root:
+
+```bash
+bash scripts/check_tutorial_installation.sh
+```
+
+It reports required commands and R packages as present or missing, treats the
+Chapter 10 HOMER commands as optional, and does not install or modify anything.
+
+The following block is the transparent manual equivalent. It stops at the
+first missing core command or R package and reports absent Chapter 10 HOMER
+commands as optional:
 
 ```bash
 set -euo pipefail
 
 for program in fastqc multiqc cutadapt bowtie2 bowtie2-build samtools \
-  picard bedtools macs3 featureCounts R Rscript annotatePeaks.pl \
-  findMotifsGenome.pl; do
+  picard bedtools macs3 featureCounts R Rscript; do
   command -v "${program}" >/dev/null || {
     echo "Missing program: ${program}" >&2
     exit 1
   }
+done
+
+for program in annotatePeaks.pl findMotifsGenome.pl; do
+  command -v "${program}" >/dev/null ||
+    echo "Optional Chapter 10 program not found: ${program}"
 done
 
 Rscript -e '

@@ -10,7 +10,7 @@ checks.
    R package before downloading or processing data.
 2. State the biological comparison, experimental unit, replicate structure,
    likely nuisance variables, organism, and reference build.
-3. Copy the files in [`config/templates/`](../../config/templates/) and replace
+3. Copy the files described in the [`config/templates/` guide](../../config/templates/README.md) and replace
    every `REVIEW_ME`, placeholder path, and example sample.
 4. Record checksums for reads and reference resources. Confirm that FASTA,
    indexes, annotation, chromosome names, and blacklist all use the same build.

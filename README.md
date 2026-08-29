@@ -1,5 +1,8 @@
 # Bulk ATAC-seq analysis of Mature and Memory human NK cells
 
+[![Repository checks](https://github.com/yazalj/bulk-atacseq-mature-memory-nk/actions/workflows/validate.yml/badge.svg)](https://github.com/yazalj/bulk-atacseq-mature-memory-nk/actions/workflows/validate.yml)
+[![Documentation site](https://github.com/yazalj/bulk-atacseq-mature-memory-nk/actions/workflows/deploy-docs.yml/badge.svg)](https://yazalj.github.io/bulk-atacseq-mature-memory-nk/)
+
 This repository is a curated, public-facing snapshot of a three-week educational
 bulk ATAC-seq project. It documents a donor-aware comparison of chromatin
 accessibility between Mature and Memory human natural killer (NK) cells using
@@ -27,9 +30,12 @@ establish transcription-factor activity, regulatory targeting, or mechanism.
 
 ## Start here
 
+- **Browse the project as a searchable website:** open the
+  [documentation site](https://yazalj.github.io/bulk-atacseq-mature-memory-nk/)
+  for sidebar navigation, search, and copy buttons on command blocks.
 - **Reproduce or inspect this internship case study:** read the
   [reproducibility notes](docs/REPRODUCIBILITY.md) and the stage-specific
-  documentation under [`workflow/`](workflow/).
+  documentation in the [`workflow/` guide](workflow/README.md).
 - **Apply the same general approach to a new experiment:** follow the
   [step-by-step bulk ATAC-seq tutorial](docs/tutorial/README.md), beginning with
   the [beginner-friendly installation and setup guide](docs/tutorial/01_requirements_and_project_setup.md)
@@ -44,6 +50,17 @@ The tutorial covers conventional **bulk, paired-end ATAC-seq**. It is not a
 single-cell ATAC-seq workflow, and its example commands must be adapted to the
 organism, reference build, library design, sample structure, and computing
 environment of each study.
+
+## Skills demonstrated
+
+| Area | Methods and tools |
+|---|---|
+| Experimental design | Paired donors, replicate structure, covariate-aware modeling, prespecified contrasts |
+| Bulk ATAC-seq | FastQC, Cutadapt, Bowtie2, SAMtools, Picard, MACS3, featureCounts |
+| Statistical analysis | R, DESeq2, apeglm shrinkage, multiple-testing control, sensitivity analysis |
+| Exploratory interpretation | GENCODE annotation, g:Profiler, HOMER, IGV, cautious non-causal reporting |
+| Reproducibility | Bash, Python, validation tests, checksums, provenance records, non-overwriting outputs |
+| AI-assisted analysis | Human-approval gates, machine-readable schemas, durable status, deterministic validation |
 
 ## Study design
 
@@ -145,6 +162,7 @@ the required derived-input roles are listed in
 This is a post-internship release snapshot, not the original execution history.
 The initial Git commit should therefore not be interpreted as the date on which
 the analyses were performed. Citation metadata are supplied in `CITATION.cff`.
+Version history is recorded in [`CHANGELOG.md`](CHANGELOG.md).
 
 The curated repository is released under the MIT License. Third-party data,
 software, databases, and excluded educational materials retain their own terms.

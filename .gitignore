@@ -58,6 +58,8 @@ __pycache__/
 node_modules/
 .cache/
 .codex_tmp/
+.site_source/
+site/
 .venv/
 venv/
 

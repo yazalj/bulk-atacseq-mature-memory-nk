@@ -27,11 +27,11 @@ advertised as a universal push-button pipeline.
 | Tutorial stage | Case-study implementation |
 |---|---|
 | Raw-read QC through peak calling | [`week1_training/README.md`](week1_training/README.md) and [`docs/METHODS.md`](../docs/METHODS.md) |
-| Consensus regions and fragment counting | [`week2_consensus_counts/`](week2_consensus_counts/) |
-| Differential accessibility | [`week2_differential_accessibility/`](week2_differential_accessibility/) |
-| Annotation and enrichment | [`week3_exploratory/`](week3_exploratory/) |
+| Consensus regions and fragment counting | [`week2_consensus_counts/`](week2_consensus_counts/README.md) |
+| Differential accessibility | [`week2_differential_accessibility/`](week2_differential_accessibility/README.md) |
+| Annotation and enrichment | [`week3_exploratory/`](week3_exploratory/README.md) |
 
 For a new dataset, begin with the blank files under
-[`config/templates/`](../config/templates/) and revise the scripts only after
+the [`config/templates/` guide](../config/templates/README.md) and revise the scripts only after
 the new metadata, reference resources, thresholds, and statistical design have
 been justified.

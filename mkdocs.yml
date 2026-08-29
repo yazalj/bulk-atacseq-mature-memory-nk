@@ -1,0 +1,95 @@
+site_name: Bulk ATAC-seq NK-cell project
+site_description: Reproducible bulk ATAC-seq case study, beginner tutorial, and human-supervised AI-agent interface
+site_url: https://yazalj.github.io/bulk-atacseq-mature-memory-nk/
+repo_url: https://github.com/yazalj/bulk-atacseq-mature-memory-nk
+repo_name: yazalj/bulk-atacseq-mature-memory-nk
+edit_uri: edit/main/
+
+docs_dir: .site_source
+site_dir: site
+
+theme:
+  name: material
+  language: en
+  features:
+    - content.code.copy
+    - navigation.footer
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+    - search.suggest
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+plugins:
+  - search:
+      lang: en
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Step-by-step tutorial:
+      - Tutorial contents: docs/tutorial/README.md
+      - Quick-start checklist: docs/tutorial/QUICKSTART.md
+      - 00 — Overview: docs/tutorial/00_overview.md
+      - 01 — Installation and setup: docs/tutorial/01_requirements_and_project_setup.md
+      - 02 — Samples and metadata: docs/tutorial/02_samples_and_metadata.md
+      - 03 — Raw-read QC: docs/tutorial/03_raw_read_quality_control.md
+      - 04 — Adapter trimming: docs/tutorial/04_adapter_trimming.md
+      - 05 — Alignment: docs/tutorial/05_alignment.md
+      - 06 — BAM filtering and QC: docs/tutorial/06_bam_filtering_and_qc.md
+      - 07 — Peak calling: docs/tutorial/07_peak_calling.md
+      - 08 — Consensus peaks and counting: docs/tutorial/08_consensus_peaks_and_counting.md
+      - 09 — Differential accessibility: docs/tutorial/09_differential_accessibility.md
+      - 10 — Annotation and enrichment: docs/tutorial/10_annotation_and_enrichment.md
+      - 11 — Interpretation and reporting: docs/tutorial/11_interpretation_and_reporting.md
+      - 12 — Troubleshooting: docs/tutorial/12_troubleshooting.md
+  - Internship case study:
+      - Workflow contents: workflow/README.md
+      - Week 1 training: workflow/week1_training/README.md
+      - Consensus peaks and counting: workflow/week2_consensus_counts/README.md
+      - Differential accessibility: workflow/week2_differential_accessibility/README.md
+      - Exploratory analysis: workflow/week3_exploratory/README.md
+      - Methods: docs/METHODS.md
+      - Reproducibility: docs/REPRODUCIBILITY.md
+      - Limitations: docs/LIMITATIONS.md
+      - Data availability: docs/DATA_AVAILABILITY.md
+      - Results guide: results/README.md
+  - AI-assisted use:
+      - Agent interface: agent/README.md
+      - Example request: agent/example_request.md
+      - Configuration example: agent/examples/README.md
+  - Reuse:
+      - Configuration templates: config/templates/README.md
+      - Report availability: report/README.md
+      - Changelog: CHANGELOG.md
+      - Third-party notices: THIRD_PARTY_NOTICES.md
+
+copyright: Copyright &copy; 2026 Yazan Aljerro · Released under the MIT License

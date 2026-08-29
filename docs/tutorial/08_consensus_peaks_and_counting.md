@@ -14,7 +14,7 @@ unions, and merged overlapping or book-ended intervals with `bedtools merge
 -d 0`. Singleton-supported regions were retained. This created 112,759 regions.
 
 The worked implementation is
-[`workflow/week2_consensus_counts/`](../../workflow/week2_consensus_counts/).
+[`workflow/week2_consensus_counts/`](../../workflow/week2_consensus_counts/README.md).
 Its safety checks are intentionally locked to the internship's ten samples, so
 a new study must revise the manifest and expected dimensions deliberately.
 

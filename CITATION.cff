@@ -6,8 +6,10 @@ authors:
   - family-names: Aljerro
     given-names: Yazan
 version: 1.0.0
-date-released: 2026-08-28
+date-released: 2026-08-29
 license: MIT
+url: "https://github.com/yazalj/bulk-atacseq-mature-memory-nk"
+repository-code: "https://github.com/yazalj/bulk-atacseq-mature-memory-nk"
 keywords:
   - ATAC-seq
   - chromatin accessibility

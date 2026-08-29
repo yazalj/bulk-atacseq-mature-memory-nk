@@ -88,11 +88,11 @@ flowchart TD
 13. [Troubleshooting and stop conditions](12_troubleshooting.md)
 
 For a compact run plan, use [QUICKSTART.md](QUICKSTART.md). Blank metadata and
-parameter files are provided under [`config/templates/`](../../config/templates/).
+parameter files are provided in the [`config/templates/` guide](../../config/templates/README.md).
 
 ## Using the tutorial with an AI agent
 
-The [`agent/`](../../agent/) directory converts the chapter sequence into a
+The [`agent/` guide](../../agent/README.md) converts the chapter sequence into a
 machine-readable, human-supervised contract. It includes stage dependencies,
 approval gates, status vocabulary, schemas, configuration validation, and an
 example starting request. Agents must still stop for study-specific scientific
@@ -103,6 +103,6 @@ decisions and may execute only an explicitly approved stage.
 The repository's main analysis is the worked example. Exact internship choices
 are recorded in [`config/analysis_parameters.yaml`](../../config/analysis_parameters.yaml)
 and [`docs/METHODS.md`](../METHODS.md). Commands in the tutorial are patterns
-with placeholders. The scripts under [`workflow/`](../../workflow/) preserve
+with placeholders. The scripts described in the [`workflow/` guide](../../workflow/README.md) preserve
 case-study-specific validation and should be adapted deliberately for a new
 study rather than run unchanged.

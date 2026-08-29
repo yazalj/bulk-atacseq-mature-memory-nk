@@ -14,9 +14,10 @@ invariants. The agent must not replace scientific decisions with guesses.
   dependencies, human decisions, expected evidence, and stop conditions.
 - [`analysis_status.template.json`](analysis_status.template.json): durable
   machine-readable state for one analysis.
-- [`schemas/`](schemas/): JSON Schemas for the sample registry and parameter
-  document.
-- [`examples/`](examples/): a small configuration-only example with no
+- JSON Schemas for the [sample registry](schemas/samples.schema.json),
+  [parameter document](schemas/parameters.schema.json), and
+  [analysis status](schemas/status.schema.json).
+- [`examples/`](examples/README.md): a small configuration-only example with no
   sequencing data.
 - [`example_request.md`](example_request.md): a reusable prompt for beginning a
   safe dry run.
