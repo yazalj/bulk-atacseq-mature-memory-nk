@@ -14,10 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "MANIFEST.sha256"
 
 
-def repository_files(include_untracked: bool = False) -> list[Path]:
+def repository_files() -> list[Path]:
     command = ["git", "-c", f"safe.directory={ROOT.as_posix()}", "ls-files", "--cached"]
-    if include_untracked:
-        command.extend(["--others", "--exclude-standard"])
     result = subprocess.run(
         command,
         cwd=ROOT,
@@ -33,17 +31,25 @@ def repository_files(include_untracked: bool = False) -> list[Path]:
     return sorted(paths, key=lambda path: path.as_posix())
 
 
-def sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for block in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(block)
-    return digest.hexdigest()
+def tracked_sha256(path: Path) -> str:
+    result = subprocess.run(
+        [
+            "git",
+            "-c",
+            f"safe.directory={ROOT.as_posix()}",
+            "show",
+            f":{path.as_posix()}",
+        ],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+    )
+    return hashlib.sha256(result.stdout).hexdigest()
 
 
 def write_manifest() -> int:
-    paths = repository_files(include_untracked=True)
-    lines = [f"{sha256(ROOT / path)}  {path.as_posix()}" for path in paths]
+    paths = repository_files()
+    lines = [f"{tracked_sha256(path)}  {path.as_posix()}" for path in paths]
     MANIFEST.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     print(f"Wrote {len(lines)} checksums to {MANIFEST.name}.")
     return 0
@@ -84,7 +90,7 @@ def check_manifest() -> int:
         if not full_path.is_file():
             failures.append(f"missing: {path.as_posix()}")
             continue
-        actual = sha256(full_path)
+        actual = tracked_sha256(path)
         if actual != entries[path]:
             failures.append(f"checksum mismatch: {path.as_posix()}")
 
