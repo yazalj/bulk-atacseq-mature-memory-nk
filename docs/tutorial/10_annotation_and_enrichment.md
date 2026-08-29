@@ -1,5 +1,7 @@
 # 10. Annotation and enrichment
 
+[← Previous: Differential accessibility](09_differential_accessibility.md) · [Tutorial contents](README.md) · [Next: Interpretation and reporting →](11_interpretation_and_reporting.md)
+
 ## Annotation
 
 Use an annotation release compatible with the reference assembly and chromosome
@@ -168,3 +170,7 @@ figures, captions, tables, and prose. They must not replace the primary result.
 - genome and annotation releases match;
 - multiple testing is handled within enrichment tools;
 - proximity, enrichment, and motif findings use non-causal language.
+
+---
+
+[← Previous: Differential accessibility](09_differential_accessibility.md) · [Tutorial contents](README.md) · [Next: Interpretation and reporting →](11_interpretation_and_reporting.md)

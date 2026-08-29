@@ -1,5 +1,7 @@
 # Differential-accessibility scripts
 
+[← Previous: Consensus peaks and counting](../week2_consensus_counts/README.md) · [Workflow contents](../README.md) · [Next: Exploratory analysis →](../week3_exploratory/README.md)
+
 `04_run_primary_deseq2.R` reproduces the fixed primary analysis from a clean
 count matrix, peak annotation, and ordered metadata. It uses the 10-in-5 filter,
 design `~ donor + cell_type`, Mature NK reference, Memory-relative-to-Mature
@@ -16,3 +18,7 @@ an existing run.
 the primary 10-in-5, 10-in-3, and no-explicit-prefilter analyses. Those large
 tables are not included in this source-oriented repository. The scripts summarize
 existing tables; highlighted raw-p-value regions are nominal, not FDR-significant.
+
+---
+
+[← Previous: Consensus peaks and counting](../week2_consensus_counts/README.md) · [Workflow contents](../README.md) · [Next: Exploratory analysis →](../week3_exploratory/README.md)

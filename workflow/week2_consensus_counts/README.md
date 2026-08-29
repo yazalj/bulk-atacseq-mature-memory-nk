@@ -1,5 +1,7 @@
 # Consensus peaks and paired-fragment counts
 
+[← Previous: Week 1 training](../week1_training/README.md) · [Workflow contents](../README.md) · [Next: Differential accessibility →](../week2_differential_accessibility/README.md)
+
 These three scripts are concise public-release adaptations. They preserve the
 sample order, merge rules, fragment-counting options, validation checks, and
 overwrite protection of the validated workflow, but they were not executed to
@@ -24,3 +26,7 @@ ATTEMPT=public_reproduction python3 workflow/week2_consensus_counts/03_create_cl
 
 The expected input basenames and fixed biological order are defined in
 `config/week2_samples.tsv`. The scripts refuse to overwrite an existing attempt.
+
+---
+
+[← Previous: Week 1 training](../week1_training/README.md) · [Workflow contents](../README.md) · [Next: Differential accessibility →](../week2_differential_accessibility/README.md)

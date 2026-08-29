@@ -1,5 +1,7 @@
 # 06. BAM filtering and alignment QC
 
+[← Previous: Alignment](05_alignment.md) · [Tutorial contents](README.md) · [Next: Peak calling →](07_peak_calling.md)
+
 ## Pair-aware processing
 
 Convert, filter, coordinate-sort, add or repair read groups, handle duplicates,
@@ -222,3 +224,7 @@ The final BAM is nonempty, coordinate sorted, indexed, structurally valid, and
 contains the intended sample only. Pair preservation and filtering counts are
 explicitly validated before peak calling. Compare QC metrics across samples and
 document any study-specific acceptance criteria before excluding a library.
+
+---
+
+[← Previous: Alignment](05_alignment.md) · [Tutorial contents](README.md) · [Next: Peak calling →](07_peak_calling.md)

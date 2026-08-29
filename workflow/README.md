@@ -1,5 +1,7 @@
 # Workflow scripts
 
+Each ordered workflow-stage page includes **Previous**, **Workflow contents**, and **Next** links at both the top and bottom.
+
 These scripts are organized by analytical stage. They are public-release
 adaptations of preserved project scripts, not newly executed analyses.
 

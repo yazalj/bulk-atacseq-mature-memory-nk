@@ -1,5 +1,7 @@
 # 03. Raw-read quality control
 
+[← Previous: Samples and metadata](02_samples_and_metadata.md) · [Tutorial contents](README.md) · [Next: Adapter trimming →](04_adapter_trimming.md)
+
 ## Purpose
 
 Inspect read quality, length, base composition, duplication, overrepresented
@@ -52,3 +54,7 @@ differs sharply from its peers should be investigated in context.
 Record the number of files, read lengths, read counts, adapter evidence,
 important warnings, and the decision to trim or retain reads. Do not discard a
 sample solely because a FastQC module is colored red.
+
+---
+
+[← Previous: Samples and metadata](02_samples_and_metadata.md) · [Tutorial contents](README.md) · [Next: Adapter trimming →](04_adapter_trimming.md)

@@ -1,5 +1,7 @@
 # 12. Troubleshooting and stop conditions
 
+[← Previous: Interpretation and reporting](11_interpretation_and_reporting.md) · [Tutorial contents](README.md)
+
 | Observation | Investigate | Do not do automatically |
 |---|---|---|
 | Missing or unequal R1/R2 records | transfer integrity, truncation, lane composition, checksums | continue with orphaned paired-end inputs |
@@ -59,3 +61,7 @@ and create a new attempt rather than overwriting the evidence.
 Record failures, their causes, and the chosen resolution. A stopped workflow
 with preserved evidence is more reproducible than a completed workflow built on
 an unresolved input or design problem.
+
+---
+
+[← Previous: Interpretation and reporting](11_interpretation_and_reporting.md) · [Tutorial contents](README.md)

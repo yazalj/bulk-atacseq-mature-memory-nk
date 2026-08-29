@@ -1,5 +1,7 @@
 # 05. Alignment
 
+[← Previous: Adapter trimming](04_adapter_trimming.md) · [Tutorial contents](README.md) · [Next: BAM filtering and QC →](06_bam_filtering_and_qc.md)
+
 ## Prepare the reference
 
 Use an authoritative FASTA and an aligner index built from exactly that FASTA.
@@ -63,3 +65,7 @@ the validated raw FASTQ paths.
 - overall and concordant mapping rates are reviewed across all samples;
 - no sample is accepted or excluded solely by comparison with an undocumented
   threshold.
+
+---
+
+[← Previous: Adapter trimming](04_adapter_trimming.md) · [Tutorial contents](README.md) · [Next: BAM filtering and QC →](06_bam_filtering_and_qc.md)

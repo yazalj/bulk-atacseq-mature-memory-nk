@@ -1,5 +1,7 @@
 # 01. Requirements, beginner installation, and project setup
 
+[← Previous: Overview](00_overview.md) · [Tutorial contents](README.md) · [Next: Samples and metadata →](02_samples_and_metadata.md)
+
 ## Recommended environment
 
 The copy-and-adapt commands in this tutorial target Bash on GNU/Linux, a
@@ -245,3 +247,7 @@ Before analysis, confirm that:
 
 Continue to [samples, metadata, and statistical design](02_samples_and_metadata.md)
 only after this gate passes.
+
+---
+
+[← Previous: Overview](00_overview.md) · [Tutorial contents](README.md) · [Next: Samples and metadata →](02_samples_and_metadata.md)

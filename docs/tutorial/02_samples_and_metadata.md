@@ -1,5 +1,7 @@
 # 02. Samples, metadata, and statistical design
 
+[← Previous: Requirements and setup](01_requirements_and_project_setup.md) · [Tutorial contents](README.md) · [Next: Raw-read QC →](03_raw_read_quality_control.md)
+
 ## Build the sample registry first
 
 Create one row per biological library using
@@ -115,3 +117,7 @@ print(colnames(model_matrix))
 - biological replicates, not sequencing lanes, define replication;
 - batch and condition are not perfectly confounded;
 - exclusions are justified before inspecting the final contrast.
+
+---
+
+[← Previous: Requirements and setup](01_requirements_and_project_setup.md) · [Tutorial contents](README.md) · [Next: Raw-read QC →](03_raw_read_quality_control.md)

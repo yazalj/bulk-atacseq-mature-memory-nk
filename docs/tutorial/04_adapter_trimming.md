@@ -1,5 +1,7 @@
 # 04. Adapter and quality trimming
 
+[← Previous: Raw-read QC](03_raw_read_quality_control.md) · [Tutorial contents](README.md) · [Next: Alignment →](05_alignment.md)
+
 ## Decide from evidence
 
 Trim only when adapters or unusable terminal bases are supported by the library
@@ -56,3 +58,7 @@ the raw mates as the alignment inputs instead of running this chapter.
 - trimming rates are plausible and not dominated by unexpectedly short reads;
 - FastQC is rerun on the trimmed mates;
 - raw reads remain unchanged.
+
+---
+
+[← Previous: Raw-read QC](03_raw_read_quality_control.md) · [Tutorial contents](README.md) · [Next: Alignment →](05_alignment.md)

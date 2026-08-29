@@ -1,5 +1,7 @@
 # 07. Peak calling
 
+[← Previous: BAM filtering and QC](06_bam_filtering_and_qc.md) · [Tutorial contents](README.md) · [Next: Consensus peaks and counting →](08_consensus_peaks_and_counting.md)
+
 ## Call peaks per biological sample
 
 For paired-end ATAC-seq, MACS3 can infer fragments directly from paired
@@ -52,3 +54,7 @@ option automatically.
 - low-quality or unusual samples are investigated alongside alignment QC;
 - peak files and the exact BAM inputs are recorded with checksums;
 - biological replicates remain separate at this stage.
+
+---
+
+[← Previous: BAM filtering and QC](06_bam_filtering_and_qc.md) · [Tutorial contents](README.md) · [Next: Consensus peaks and counting →](08_consensus_peaks_and_counting.md)

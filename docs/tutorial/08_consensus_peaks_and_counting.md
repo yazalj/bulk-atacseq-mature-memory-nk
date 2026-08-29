@@ -1,5 +1,7 @@
 # 08. Consensus peaks and fragment counting
 
+[← Previous: Peak calling](07_peak_calling.md) · [Tutorial contents](README.md) · [Next: Differential accessibility →](09_differential_accessibility.md)
+
 ## Define the feature universe
 
 A differential analysis needs the same genomic features for every sample.
@@ -203,3 +205,7 @@ write.table(
 - counts are nonnegative integers and represent fragments, not individual mates;
 - column sums agree with the counter's assignment summary;
 - the clean matrix contains no silent filtering, normalization, or reordering.
+
+---
+
+[← Previous: Peak calling](07_peak_calling.md) · [Tutorial contents](README.md) · [Next: Differential accessibility →](09_differential_accessibility.md)

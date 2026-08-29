@@ -1,5 +1,7 @@
 # Reusable bulk ATAC-seq tutorial
 
+Each numbered chapter has **Previous**, **Tutorial contents**, and **Next** links at both the top and bottom, so you can read the tutorial in order without returning to this page between chapters.
+
 This tutorial translates the internship workflow into a reviewable sequence for
 new **bulk, paired-end ATAC-seq** studies. It teaches the analytical logic and
 validation gates; it is not a promise that one fixed command set is correct for

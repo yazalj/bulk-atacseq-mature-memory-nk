@@ -1,5 +1,7 @@
 # Quick-start checklist
 
+[Tutorial contents](README.md) · [Start the full tutorial: Overview →](00_overview.md)
+
 Use this page as a navigation aid, not as a substitute for the chapter-level
 checks.
 
@@ -39,3 +41,7 @@ checks.
 
 Proceed to the next stage only after the current stage's expected outputs and
 validation gate have passed.
+
+---
+
+[Tutorial contents](README.md) · [Start the full tutorial: Overview →](00_overview.md)

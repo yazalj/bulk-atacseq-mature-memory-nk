@@ -1,5 +1,7 @@
 # Exploratory Week 3 scripts
 
+[← Previous: Differential accessibility](../week2_differential_accessibility/README.md) · [Workflow contents](../README.md)
+
 These scripts operate on nominal candidate sets after the primary analysis
 returned zero FDR-significant DARs.
 
@@ -19,3 +21,7 @@ by the shell in which HOMER is installed.
 
 None of these analyses establishes a significant DAR, target gene,
 transcription-factor activity, or regulatory mechanism.
+
+---
+
+[← Previous: Differential accessibility](../week2_differential_accessibility/README.md) · [Workflow contents](../README.md)

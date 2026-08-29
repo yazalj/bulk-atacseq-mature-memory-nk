@@ -1,5 +1,7 @@
 # 11. Interpretation and reporting
 
+[← Previous: Annotation and enrichment](10_annotation_and_enrichment.md) · [Tutorial contents](README.md) · [Next: Troubleshooting →](12_troubleshooting.md)
+
 ## Report in this order
 
 1. Experimental design, samples, exclusions, and reference build.
@@ -62,3 +64,7 @@ Keep the exact commands used for each sample and stage alongside these records.
 The worked example's public reporting choices can be reviewed in
 [`docs/METHODS.md`](../METHODS.md), [`docs/LIMITATIONS.md`](../LIMITATIONS.md),
 and [`docs/REPRODUCIBILITY.md`](../REPRODUCIBILITY.md).
+
+---
+
+[← Previous: Annotation and enrichment](10_annotation_and_enrichment.md) · [Tutorial contents](README.md) · [Next: Troubleshooting →](12_troubleshooting.md)

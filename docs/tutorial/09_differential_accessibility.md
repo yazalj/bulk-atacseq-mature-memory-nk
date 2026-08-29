@@ -1,5 +1,7 @@
 # 09. Differential accessibility
 
+[← Previous: Consensus peaks and counting](08_consensus_peaks_and_counting.md) · [Tutorial contents](README.md) · [Next: Annotation and enrichment →](10_annotation_and_enrichment.md)
+
 ## Validate inputs before fitting
 
 Confirm that matrix row identifiers are unique, matrix columns exactly equal
@@ -226,3 +228,7 @@ the differential model.
 - thresholds were fixed before classification;
 - zero significant regions are reported as a valid result, not converted into
   discoveries by switching silently to raw p-values.
+
+---
+
+[← Previous: Consensus peaks and counting](08_consensus_peaks_and_counting.md) · [Tutorial contents](README.md) · [Next: Annotation and enrichment →](10_annotation_and_enrichment.md)

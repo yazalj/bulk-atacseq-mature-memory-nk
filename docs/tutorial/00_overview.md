@@ -1,5 +1,7 @@
 # 00. Overview and decision points
 
+[Tutorial contents](README.md) · [Next: Requirements and setup →](01_requirements_and_project_setup.md)
+
 ## Objective
 
 Convert paired-end bulk ATAC-seq reads into a quality-controlled region-by-
@@ -30,3 +32,7 @@ agreed analysis plan. They are an example, not universal defaults.
 For every stage, preserve four things: immutable input identity, the exact
 command and software version, validation evidence, and a new non-overwriting
 output location. Separate observed results from interpretation.
+
+---
+
+[Tutorial contents](README.md) · [Next: Requirements and setup →](01_requirements_and_project_setup.md)
