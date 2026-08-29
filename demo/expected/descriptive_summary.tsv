@@ -1,0 +1,6 @@
+peak_id	mean_condition_A	mean_condition_B	descriptive_log2fc_condition_B_vs_condition_A
+peak_001	100.000000	100.000000	0.000000
+peak_002	10.666667	40.000000	1.813231
+peak_004	22.333333	5.000000	-1.959358
+peak_005	10.000000	10.000000	0.000000
+peak_006	0.000000	13.333333	3.841302

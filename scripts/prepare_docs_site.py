@@ -22,6 +22,7 @@ INCLUDED_PREFIXES = (
     ".agents/",
     "agent/",
     "config/",
+    "demo/",
     "docs/",
     "environment/",
     "results/",

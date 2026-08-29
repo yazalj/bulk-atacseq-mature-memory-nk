@@ -5,9 +5,11 @@
 Use this page as a navigation aid, not as a substitute for the chapter-level
 checks.
 
-1. Follow the [installation and setup chapter](01_requirements_and_project_setup.md),
+1. Review the [resource-planning companion](RESOURCE_PLANNING.md), then follow
+   the [installation and setup chapter](01_requirements_and_project_setup.md),
    activate the tutorial environment, and verify every required executable and
-   R package before downloading or processing data.
+   R package before downloading or processing data. Run the
+   [synthetic smoke test](../../demo/README.md) as a fast known-output check.
 2. State the biological comparison, experimental unit, replicate structure,
    likely nuisance variables, organism, and reference build.
 3. Copy the files described in the [`config/templates/` guide](../../config/templates/README.md) and replace

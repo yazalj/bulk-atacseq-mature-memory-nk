@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: Aljerro
     given-names: Yazan
-version: 1.0.0
+version: 1.0.1
 date-released: 2026-08-29
 license: MIT
 url: "https://github.com/yazalj/bulk-atacseq-mature-memory-nk"

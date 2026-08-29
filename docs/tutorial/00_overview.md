@@ -1,6 +1,6 @@
 # 00. Overview and decision points
 
-[Tutorial contents](README.md) · [Next: Requirements and setup →](01_requirements_and_project_setup.md)
+[Tutorial contents](README.md) · [Next: Resource planning →](RESOURCE_PLANNING.md)
 
 ## Objective
 
@@ -35,4 +35,4 @@ output location. Separate observed results from interpretation.
 
 ---
 
-[Tutorial contents](README.md) · [Next: Requirements and setup →](01_requirements_and_project_setup.md)
+[Tutorial contents](README.md) · [Next: Resource planning →](RESOURCE_PLANNING.md)

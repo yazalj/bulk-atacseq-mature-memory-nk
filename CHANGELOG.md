@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.1 — 2026-08-29
+
+- Added a dependency-free synthetic count-matrix demonstration with tracked
+  expected outputs and automated tests.
+- Added conservative runtime, memory, and storage planning guidance for each
+  major tutorial stage.
+- Linked the new demonstration and planning companion throughout the beginner
+  documentation and searchable site.
+- Streamlined public-facing repository notes and navigation.
+
 ## 1.0.0 — 2026-08-29
 
 - Published the curated, post-internship bulk ATAC-seq case study.

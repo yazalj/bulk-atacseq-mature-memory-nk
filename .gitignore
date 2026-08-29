@@ -60,6 +60,7 @@ node_modules/
 .codex_tmp/
 .site_source/
 site/
+demo/run_attempt*/
 .venv/
 venv/
 

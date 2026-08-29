@@ -1,6 +1,6 @@
 # 01. Requirements, beginner installation, and project setup
 
-[← Previous: Overview](00_overview.md) · [Tutorial contents](README.md) · [Next: Samples and metadata →](02_samples_and_metadata.md)
+[← Previous: Resource planning](RESOURCE_PLANNING.md) · [Tutorial contents](README.md) · [Next: Samples and metadata →](02_samples_and_metadata.md)
 
 ## Recommended environment
 
@@ -265,4 +265,4 @@ only after this gate passes.
 
 ---
 
-[← Previous: Overview](00_overview.md) · [Tutorial contents](README.md) · [Next: Samples and metadata →](02_samples_and_metadata.md)
+[← Previous: Resource planning](RESOURCE_PLANNING.md) · [Tutorial contents](README.md) · [Next: Samples and metadata →](02_samples_and_metadata.md)

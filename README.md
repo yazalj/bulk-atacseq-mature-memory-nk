@@ -40,6 +40,8 @@ establish transcription-factor activity, regulatory targeting, or mechanism.
   [step-by-step bulk ATAC-seq tutorial](docs/tutorial/README.md), beginning with
   the [beginner-friendly installation and setup guide](docs/tutorial/01_requirements_and_project_setup.md)
   and [quick-start checklist](docs/tutorial/QUICKSTART.md).
+- **Try a fast known-output example:** run the dependency-free
+  [synthetic count-matrix smoke test](demo/README.md) before using real data.
 - **Work with an AI agent:** begin with the
   [human-supervised agent interface](agent/README.md). It provides a staged
   workflow contract, machine-readable configuration and status files,
@@ -143,6 +145,7 @@ results/      small summary tables and selected report-ready figures
 docs/         project documentation and reusable step-by-step tutorial
 agent/        provider-neutral AI-agent contract, schemas, state, and examples
 environment/  recorded software and package versions
+demo/         synthetic inputs, expected outputs, and a fast smoke test
 ```
 
 Raw reads, BAM/BAI files, reference genomes, indexes, large peak collections,

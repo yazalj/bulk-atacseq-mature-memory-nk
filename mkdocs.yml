@@ -58,7 +58,9 @@ nav:
   - Step-by-step tutorial:
       - Tutorial contents: docs/tutorial/README.md
       - Quick-start checklist: docs/tutorial/QUICKSTART.md
+      - Synthetic smoke test: demo/README.md
       - 00 — Overview: docs/tutorial/00_overview.md
+      - Resource planning: docs/tutorial/RESOURCE_PLANNING.md
       - 01 — Installation and setup: docs/tutorial/01_requirements_and_project_setup.md
       - 02 — Samples and metadata: docs/tutorial/02_samples_and_metadata.md
       - 03 — Raw-read QC: docs/tutorial/03_raw_read_quality_control.md

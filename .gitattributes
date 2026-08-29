@@ -1,7 +1,9 @@
 * text=auto
 .gitattributes text eol=lf
 .gitignore text eol=lf
+MANIFEST.sha256 text eol=lf
 *.cff text eol=lf
+*.json text eol=lf
 *.txt text eol=lf
 *.sh text eol=lf
 *.py text eol=lf

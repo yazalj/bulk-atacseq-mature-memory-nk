@@ -24,6 +24,12 @@ must be repeated deliberately for every sample in the metadata table.
 If an example output path already exists, preserve it and change the new run to
 an attempt-specific path instead of overwriting it.
 
+Before using real sequencing files, run the dependency-free
+[synthetic count-matrix smoke test](../../demo/README.md). It gives a quick
+known-output check of metadata ordering and low-count filtering. Then review
+the [resource-planning companion](RESOURCE_PLANNING.md) for rough time, memory,
+and disk expectations.
+
 ## Scope
 
 The guide assumes biological replicates, paired-end reads, a suitable reference
@@ -74,6 +80,7 @@ flowchart TD
 ## Chapters
 
 1. [Overview and decision points](00_overview.md)
+   - [Resource planning before real data](RESOURCE_PLANNING.md)
 2. [Requirements, beginner installation, and project setup](01_requirements_and_project_setup.md)
 3. [Samples, metadata, and statistical design](02_samples_and_metadata.md)
 4. [Raw-read quality control](03_raw_read_quality_control.md)

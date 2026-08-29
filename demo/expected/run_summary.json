@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "samples": 6,
+  "conditions": [
+    "condition_A",
+    "condition_B"
+  ],
+  "input_peaks": 6,
+  "minimum_count": 10,
+  "minimum_samples": 3,
+  "retained_peaks": 5,
+  "interpretation": "technical_smoke_test_only_no_statistical_inference"
+}
