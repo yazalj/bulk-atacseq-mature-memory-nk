@@ -88,7 +88,6 @@ nav:
       - Configuration example: agent/examples/README.md
   - Reuse:
       - Configuration templates: config/templates/README.md
-      - Report availability: report/README.md
       - Changelog: CHANGELOG.md
       - Third-party notices: THIRD_PARTY_NOTICES.md
 

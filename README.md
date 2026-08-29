@@ -143,7 +143,6 @@ results/      small summary tables and selected report-ready figures
 docs/         project documentation and reusable step-by-step tutorial
 agent/        provider-neutral AI-agent contract, schemas, state, and examples
 environment/  recorded software and package versions
-report/       publication-status note; the submitted report is not included
 ```
 
 Raw reads, BAM/BAI files, reference genomes, indexes, large peak collections,

@@ -146,8 +146,8 @@ suppressPackageStartupMessages({
 # 2. Project paths and small helper functions
 # =============================================================================
 
-# Keep this portable for submission: the project root is the RStudio working
-# directory rather than a personal absolute Windows path.
+# Keep this portable across working directories: the project root is the
+# RStudio working directory rather than a personal absolute Windows path.
 project_root <- normalizePath(
   getwd(),
   winslash = "/",

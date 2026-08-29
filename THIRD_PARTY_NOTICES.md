@@ -13,7 +13,3 @@ MACS3, featureCounts, R, DESeq2, apeglm, GENCODE, g:Profiler, HOMER, and IGV.
 Those projects retain their own copyrights, licenses, citation requirements,
 and database terms. Mentioning them here does not redistribute or relicense
 their software or reference resources.
-
-The submitted university report and presentation are not included in this
-snapshot. They used an educational template and contained tutor-supplied
-context that requires a separate rights and privacy review before publication.

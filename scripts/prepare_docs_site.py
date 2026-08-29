@@ -24,7 +24,6 @@ INCLUDED_PREFIXES = (
     "config/",
     "docs/",
     "environment/",
-    "report/",
     "results/",
     "scripts/",
     "workflow/",
