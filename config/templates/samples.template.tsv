@@ -1,3 +1,5 @@
-order	sample_id	donor	condition	batch	treatment	sequencing_layout	read1_fastq	read2_fastq
-1	sample_01	donor_01	condition_A	batch_01	untreated	paired-end	/path/to/sample_01_R1.fastq.gz	/path/to/sample_01_R2.fastq.gz
-2	sample_02	donor_01	condition_B	batch_01	untreated	paired-end	/path/to/sample_02_R1.fastq.gz	/path/to/sample_02_R2.fastq.gz
+order	sample_id	donor	condition	batch	treatment	sequencing_layout	read1_fastq	read2_fastq	final_bam
+1	sample_01	donor_01	condition_A	batch_01	untreated	paired-end	/path/to/sample_01_R1.fastq.gz	/path/to/sample_01_R2.fastq.gz	/path/to/sample_01.final.bam
+2	sample_02	donor_01	condition_B	batch_01	untreated	paired-end	/path/to/sample_02_R1.fastq.gz	/path/to/sample_02_R2.fastq.gz	/path/to/sample_02.final.bam
+3	sample_03	donor_02	condition_A	batch_01	untreated	paired-end	/path/to/sample_03_R1.fastq.gz	/path/to/sample_03_R2.fastq.gz	/path/to/sample_03.final.bam
+4	sample_04	donor_02	condition_B	batch_01	untreated	paired-end	/path/to/sample_04_R1.fastq.gz	/path/to/sample_04_R2.fastq.gz	/path/to/sample_04.final.bam

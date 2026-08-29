@@ -5,6 +5,16 @@ bulk ATAC-seq project. It documents a donor-aware comparison of chromatin
 accessibility between Mature and Memory human natural killer (NK) cells using
 public sequencing accessions from Calderon et al. (2019).
 
+## Project context
+
+This work was completed during the three-week full-time internship component of
+the **M.CoBi.310 Systems Biology** course at the University of Göttingen, in
+collaboration with the University Medical Center Göttingen (UMG).
+
+This repository is an independent, student-authored public release for
+educational and portfolio use. It is not an official University of Göttingen or
+UMG software product, publication, or institutional endorsement.
+
 > **Primary result:** 59,186 consensus regions passed the prespecified
 > low-count filter. No region met the declared differential-accessibility
 > threshold of adjusted p-value < 0.05 and absolute log2 fold change >= 1,
@@ -22,7 +32,8 @@ establish transcription-factor activity, regulatory targeting, or mechanism.
   documentation under [`workflow/`](workflow/).
 - **Apply the same general approach to a new experiment:** follow the
   [step-by-step bulk ATAC-seq tutorial](docs/tutorial/README.md), beginning with
-  the [quick-start checklist](docs/tutorial/QUICKSTART.md).
+  the [beginner-friendly installation and setup guide](docs/tutorial/01_requirements_and_project_setup.md)
+  and [quick-start checklist](docs/tutorial/QUICKSTART.md).
 - **Work with an AI agent:** begin with the
   [human-supervised agent interface](agent/README.md). It provides a staged
   workflow contract, machine-readable configuration and status files,

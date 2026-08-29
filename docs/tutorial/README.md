@@ -5,6 +5,23 @@ new **bulk, paired-end ATAC-seq** studies. It teaches the analytical logic and
 validation gates; it is not a promise that one fixed command set is correct for
 every organism, library preparation, or experimental design.
 
+## How to use the command blocks
+
+The practical chapters include copy-and-adapt commands for one sample or one
+analysis stage. They target a Bash terminal on GNU/Linux, a managed Linux HPC
+system, or Windows Subsystem for Linux (WSL), and assume that the reader is
+standing in the project root. Bioconda also supports macOS, but macOS readers
+may need to adapt GNU system utilities such as `sha256sum` and `zcat`. Values
+such as `CHANGE_ME`, adapter sequences, reference paths, group names, and
+thresholds must be replaced before execution.
+
+The commands are intentionally manual: complete one stage, inspect its outputs,
+and pass its validation gate before copying the next block. Do not paste the
+whole tutorial as one unattended script. Commands for a single example sample
+must be repeated deliberately for every sample in the metadata table.
+If an example output path already exists, preserve it and change the new run to
+an attempt-specific path instead of overwriting it.
+
 ## Scope
 
 The guide assumes biological replicates, paired-end reads, a suitable reference
@@ -55,7 +72,7 @@ flowchart TD
 ## Chapters
 
 1. [Overview and decision points](00_overview.md)
-2. [Requirements and project setup](01_requirements_and_project_setup.md)
+2. [Requirements, beginner installation, and project setup](01_requirements_and_project_setup.md)
 3. [Samples, metadata, and statistical design](02_samples_and_metadata.md)
 4. [Raw-read quality control](03_raw_read_quality_control.md)
 5. [Adapter and quality trimming](04_adapter_trimming.md)

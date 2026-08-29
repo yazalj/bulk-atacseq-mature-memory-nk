@@ -14,6 +14,35 @@
 | Zero FDR-significant regions | power, heterogeneity, model, diagnostics, effect sizes | promote raw-p-value candidates to discoveries |
 | Enrichment changes with background | target universe and gene mapping | use the whole genome by convenience |
 
+## Copy-and-adapt diagnostic commands
+
+Use only the checks relevant to the failed stage. Replace the paths before
+running them; these commands inspect inputs and do not repair or replace them.
+
+```bash
+# Compressed FASTQ integrity
+gzip -t /path/to/sample_R1.fastq.gz
+gzip -t /path/to/sample_R2.fastq.gz
+
+# Read counts: each FASTQ record contains four lines
+zcat /path/to/sample_R1.fastq.gz | awk 'END { print NR / 4 }'
+zcat /path/to/sample_R2.fastq.gz | awk 'END { print NR / 4 }'
+
+# BAM structure, header, counts, and index agreement
+samtools quickcheck -v /path/to/sample.final.bam
+samtools view -H /path/to/sample.final.bam
+samtools flagstat /path/to/sample.final.bam
+samtools idxstats /path/to/sample.final.bam
+
+# Confirm the count-matrix header and metadata order before opening R
+head -n 1 results/counts/consensus_counts.clean.tsv
+cut -f 2 config/local/samples.tsv
+```
+
+If one of these checks fails, preserve the failing file and log, determine
+whether the problem arose during download, transfer, processing, or indexing,
+and create a new attempt rather than overwriting the evidence.
+
 ## Stop and resolve before continuing when
 
 - a sample identity, mate, organism, reference build, annotation, blacklist, or

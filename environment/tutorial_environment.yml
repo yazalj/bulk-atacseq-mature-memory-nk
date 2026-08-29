@@ -1,0 +1,36 @@
+name: bulk-atacseq-tutorial
+
+# Beginner-oriented Linux/macOS environment for following the reusable tutorial.
+# It is not the historical internship execution environment. Record the exact
+# resolved versions after installation because package repositories change.
+channels:
+  - conda-forge
+  - bioconda
+  - nodefaults
+
+dependencies:
+  # Read QC, trimming, alignment, and BAM processing
+  - fastqc
+  - multiqc
+  - cutadapt
+  - bowtie2
+  - samtools
+  - picard
+  - bedtools
+
+  # Peak calling and paired-fragment counting
+  - macs3
+  - subread
+
+  # Differential accessibility and figures
+  - r-base
+  - bioconductor-deseq2
+  - bioconductor-apeglm
+  - bioconductor-vsn
+  - r-ggplot2
+  - r-pheatmap
+  - r-data.table
+  - r-gprofiler2
+
+  # Optional annotation and motif exploration used in Chapter 10
+  - homer

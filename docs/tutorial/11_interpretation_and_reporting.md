@@ -29,6 +29,36 @@ limitations document. Large or controlled data should remain in an appropriate
 archive rather than Git. Make public-data accessions and regeneration steps
 discoverable.
 
+## Copy-and-adapt provenance commands
+
+Run these commands from the project root after activating the same environment
+used for analysis. The `environment/local/` directory is ignored by this
+repository so machine-specific package URLs are not published accidentally.
+
+```bash
+set -euo pipefail
+
+mkdir -p environment/local logs/reporting
+conda list --explicit > environment/local/conda_explicit_spec.txt
+conda env export > environment/local/conda_environment_resolved.yml
+Rscript -e 'sessionInfo()' > environment/local/R_sessionInfo.txt
+
+sha256sum \
+  config/local/samples.tsv \
+  config/local/input_manifest.tsv \
+  config/local/analysis_parameters.yaml \
+  results/consensus/consensus.bed \
+  results/counts/consensus_counts.clean.tsv \
+  results/differential_accessibility/all_tested_regions.tsv \
+  > logs/reporting/key_output_sha256.txt
+
+date '+%Y-%m-%dT%H:%M:%S%z' > logs/reporting/reporting_timestamp.txt
+```
+
+If a listed output does not exist because that optional stage was not run,
+remove only that path from the checksum command and state why it is absent.
+Keep the exact commands used for each sample and stage alongside these records.
+
 The worked example's public reporting choices can be reviewed in
 [`docs/METHODS.md`](../METHODS.md), [`docs/LIMITATIONS.md`](../LIMITATIONS.md),
 and [`docs/REPRODUCIBILITY.md`](../REPRODUCIBILITY.md).

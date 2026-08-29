@@ -91,6 +91,7 @@ logs/
 .env.*
 !.env.example
 config/local/
+environment/local/
 agent/local_status/
 agent/run_state/
 *.pem

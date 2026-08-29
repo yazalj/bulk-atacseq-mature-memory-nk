@@ -4,7 +4,8 @@ Copy these files into a new project-specific configuration directory; do not
 edit the templates in place and assume they are analysis-ready.
 
 - `samples.template.tsv` records biological identity, experimental factors,
-  sequencing layout, and paired read paths.
+  sequencing layout, paired read paths, and the final BAM path that will be
+  passed to featureCounts.
 - `input_manifest.template.tsv` records input roles, provenance, and checksums.
 - `analysis_parameters.template.yaml` makes study-specific choices explicit.
 - `analysis_parameters.agent.template.json` provides the same role in a format
